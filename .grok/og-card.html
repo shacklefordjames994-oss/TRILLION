@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Optimus Ω</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 1200px;
+      height: 630px;
+      background: #121410;
+      overflow: hidden;
+    }
+    body {
+      font-family: "Liberation Sans", "Nimbus Sans", sans-serif;
+    }
+    .card {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      background:
+        radial-gradient(ellipse 48% 62% at 50% 46%, rgba(227, 160, 8, 0.20), rgba(227, 160, 8, 0) 68%),
+        radial-gradient(ellipse 28% 36% at 50% 72%, rgba(194, 65, 45, 0.16), rgba(194, 65, 45, 0) 70%),
+        #121410;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .plate {
+      position: absolute;
+      inset: 34px 40px;
+      border: 1px solid rgba(231, 226, 212, 0.16);
+      pointer-events: none;
+    }
+    .plate i {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: rgba(231, 226, 212, 0.55);
+      border-style: solid;
+    }
+    .plate i:nth-child(1) { top: -1px; left: -1px; border-width: 1.5px 0 0 1.5px; }
+    .plate i:nth-child(2) { top: -1px; right: -1px; border-width: 1.5px 1.5px 0 0; }
+    .plate i:nth-child(3) { bottom: -1px; left: -1px; border-width: 0 0 1.5px 1.5px; }
+    .plate i:nth-child(4) { bottom: -1px; right: -1px; border-width: 0 1.5px 1.5px 0; }
+    .lockup {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-6px);
+    }
+    .word {
+      margin: 0;
+      color: #E7E2D4;
+      font-weight: 400;
+      font-size: 92px;
+      line-height: 1;
+      letter-spacing: 0.38em;
+      padding-left: 0.38em;
+    }
+    .omega {
+      width: 248px;
+      height: 168px;
+      margin-top: 18px;
+      display: block;
+    }
+    .rule {
+      width: 92px;
+      height: 4px;
+      margin-top: 10px;
+      background: #C2412D;
+      border-radius: 2px;
+    }
+    .noise {
+      position: absolute;
+      inset: 0;
+      width: 1200px;
+      height: 630px;
+      opacity: 0.22;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="plate" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="lockup">
+      <p class="word">OPTIMUS</p>
+      <svg class="omega" viewBox="0 0 240 160" aria-label="Ω">
+        <path fill="#E3A008" d="M36 132
+          C36 58 72 22 120 22
+          C168 22 204 58 204 132
+          L168 132
+          C168 82 150 62 120 62
+          C90 62 72 82 72 132
+          Z"/>
+        <rect x="22" y="124" width="58" height="16" rx="2" fill="#E3A008"/>
+        <rect x="160" y="124" width="58" height="16" rx="2" fill="#E3A008"/>
+      </svg>
+      <div class="rule"></div>
+    </div>
+    <svg class="noise" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <filter id="n">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#n)"/>
+    </svg>
+  </div>
+</body>
+</html>

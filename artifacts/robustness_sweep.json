@@ -1,0 +1,84 @@
+{
+  "benchmark": "OMEGA-GUARD RGB-D fault sweep",
+  "benchmark_version": "0.1",
+  "physical_execution_enabled": false,
+  "detector": "StaticTestDetector \u2014 boxes are not re-detected from the altered image",
+  "results": [
+    {
+      "source": "SIMULATION_ONLY",
+      "seed": 7,
+      "noise_sigma_m": 0.0,
+      "missing_depth_fraction": 0.0,
+      "injected_faults": [],
+      "status": "EVALUATED",
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_positive_objects": 0,
+      "mean_error_m": 0.013411683374043488,
+      "max_error_m": 0.014804865003699905
+    },
+    {
+      "source": "SIMULATION_ONLY",
+      "seed": 7,
+      "noise_sigma_m": 0.01,
+      "missing_depth_fraction": 0.0,
+      "injected_faults": [
+        "DEPTH_GAUSSIAN_NOISE"
+      ],
+      "status": "EVALUATED",
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_positive_objects": 0,
+      "mean_error_m": 0.013412538491236884,
+      "max_error_m": 0.014822577412700043
+    },
+    {
+      "source": "SIMULATION_ONLY",
+      "seed": 7,
+      "noise_sigma_m": 0.03,
+      "missing_depth_fraction": 0.1,
+      "injected_faults": [
+        "DEPTH_GAUSSIAN_NOISE",
+        "MISSING_DEPTH"
+      ],
+      "status": "EVALUATED",
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_positive_objects": 0,
+      "mean_error_m": 0.013476339616711517,
+      "max_error_m": 0.014878786122986744
+    },
+    {
+      "source": "SIMULATION_ONLY",
+      "seed": 7,
+      "noise_sigma_m": 0.05,
+      "missing_depth_fraction": 0.3,
+      "injected_faults": [
+        "DEPTH_GAUSSIAN_NOISE",
+        "MISSING_DEPTH"
+      ],
+      "status": "EVALUATED",
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_positive_objects": 0,
+      "mean_error_m": 0.0135747003015236,
+      "max_error_m": 0.01498060639300859
+    },
+    {
+      "source": "SIMULATION_ONLY",
+      "seed": 21,
+      "noise_sigma_m": 0.05,
+      "missing_depth_fraction": 0.3,
+      "injected_faults": [
+        "DEPTH_GAUSSIAN_NOISE",
+        "MISSING_DEPTH"
+      ],
+      "status": "EVALUATED",
+      "matched_objects": 2,
+      "missed_objects": 0,
+      "false_positive_objects": 0,
+      "mean_error_m": 0.013540087166438283,
+      "max_error_m": 0.015045221011600309
+    }
+  ]
+}
