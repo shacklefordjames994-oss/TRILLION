@@ -76,7 +76,11 @@ export function BrainConsole({ latched }: { latched: boolean }) {
       </p>
       <p className="note">
         Scenario suite: 1 of 1 injected conflicts caught, 0 missed, 1 of 1 stale frames rejected, 0 fail-closed
-        violations. Denominator is 3 synthetic cases, not a field trial.
+        violations. Denominator is 3 synthetic cases, not a field trial. A stored PASS still does not authorize motion.
+        A reviewer cannot turn a failed run into a pass. The policy digest is recomputed from the trusted policy, and a
+        mismatch does not clear the inhibit. A verified boot chain starts simulation only. It does not enable motion.
+        A stored benchmark assessment does not clear the inhibit. The gate recomputes the result and does not trust a
+        stored PASS.
       </p>
       <p className={grade.blocked ? "note held" : "note ok"}>
         {grade.grade} · risk {grade.risk}. {grade.reason} Proposal {grade.blocked ? "blocked" : "visible"}. Motion
@@ -103,7 +107,8 @@ export function BrainConsole({ latched }: { latched: boolean }) {
         </li>
       </ul>
       <p className="note held">
-        {physicalDenial ?? "Physical execution is inhibited. Approving a simulation does not release it."}
+        Hardware model only. A closed chain in this view is not a safety certificate, and actuator output stays
+        disabled. {physicalDenial ?? "Physical execution is inhibited. Approving a simulation does not release it."}
       </p>
       <div className="actions">
         <button type="button" className="ghost" onClick={() => setPhysicalDenial(requestPhysicalExecution().code)}>
